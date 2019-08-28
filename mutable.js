@@ -36,8 +36,8 @@ function States(type)
 	//Member variable
 	this.childStates 		= {};
 	this.preTransition	 	= {}; 
-	this.type				= 0;
-	this.active				= false;
+	this.type			= 0;
+	this.active			= false;
 
 	//Checking type of state
 	if(type === "GROUP")
@@ -133,7 +133,7 @@ States.prototype.fillTransition = function(transitionName)
 //==========
 // INSTANCES
 //==========
-var stDoor 		= new States("GROUP");
+var stDoor 	= new States("GROUP");
 var stOpened 	= new States("SINGLE");
 var stOpening 	= new States("SINGLE");
 var stClosed 	= new States("SINGLE");
@@ -149,7 +149,7 @@ var stClosing 	= new States("SINGLE");
 function changeColor(newState, newPreTransition, oldState, oldPreTransition, in_HEX, INIT)
 {
 	// Variables connected to HTML document
-	var states			= document.getElementsByClassName('states');
+	var states		= document.getElementsByClassName('states');
 	var changingColor	= document.getElementById(newState).style;
 
 	// Variables js-file intern
@@ -163,7 +163,7 @@ function changeColor(newState, newPreTransition, oldState, oldPreTransition, in_
 	// First time web page is loaded/initialized
 	if(INIT === true)
 	{
-		activeNewState.active			= true;
+		activeNewState.active		= true;
 		newTransition[newPreTransition] = true;
 
 		changingColor.backgroundColor	= in_HEX;
@@ -183,11 +183,11 @@ function changeColor(newState, newPreTransition, oldState, oldPreTransition, in_
 	
 		
 		// Reseting active state and its pre transition
-		activeOldState.active	 		= false;
+		activeOldState.active	 	= false;
 		oldTransition[oldPreTransition] = false;
 		
 		// Activating new state and its pre transition
-		activeNewState.active			= true;
+		activeNewState.active		= true;
 		newTransition[newPreTransition]	= true;
 		
 		changingColor.backgroundColor	= in_HEX;
