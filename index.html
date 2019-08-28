@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+
+<html>
+
+	<head>
+	
+		<title>Mutabel Data</title>
+		<meta charset="UTF-8">
+	
+	</head>
+	
+	
+	<!--
+		NOTE:
+		==============================================================================================================
+		Because of simplicity & demonstration purposes, the "style" attribute is used within html tags.
+		Nevertheless it is recommended to use CSS for styling.
+		
+		"margin: auto" sets the "div" tag to center. This would also work in "body" tag but then there would be 
+		no default margin for top.
+
+		"div" tag doesn`t react to "text-align:center" which is found in "body" tag, but other tags do.
+ 
+		Some "div" tags have "position:absolute" to adjust them into desired position.
+		This works because of "position:relative" which is found in the parent tag "section".
+
+		The "height" and "width" attributes of the "div" tag  defines the area which attribute "onclick" should react
+		
+		"id" of a "div" which contains a state has to be identical with state key 
+		when filling state objects in "mutable.js". 
+		
+		Some tag attributes are put into new lines, to keep them more visible.
+		==============================================================================================================
+	-->
+	
+	
+	<body style="text-align:center; margin-left: auto; margin-right:auto;">
+	
+	
+	<h2>Door State Diagram</h2>
+	
+		<!--STATES & TRANSITIONS-->
+		<section style="position:relative; 
+						width:300px;
+						height:250px;
+						left:calc(50% - 150px);">
+						
+						
+						
+			
+			
+			<!--1. ROW-->
+			<div 	class="states"
+					id="OPENED"
+					style="	height:50px; 
+							width:100px; 
+							margin: auto;">
+							
+				<img src="images/states/stOpened.png">
+
+			</div>
+				
+		
+			<!--2. ROW-->			
+			<div 	onclick="changeColor('CLOSING', 'CLOSE','OPENED', 'OPENING_FIN', '#FF8C00', false);"
+					style="	height:50px; 
+							width:150px; 
+							float:left"> 
+					
+				<img src="images/transitions/trClose.png">
+
+			</div>
+						
+						
+			<div 	onclick="changeColor('OPENED', 'OPENING_FIN','OPENING', 'OPEN', '#FF8C00', false);"
+					style="	height:50px; 
+							width:150px; 
+							float:left"> 				
+
+				<img src="images/transitions/trOpeningFIN.png">
+
+			</div>
+
+
+			<!--3. ROW-->
+			<div 	class="states" 
+					id="CLOSING"
+					style="	height:50px; 
+							width:100px; 
+							float:left;">			
+
+				<img src="images/states/stClosing.png">
+
+			</div>
+						
+						
+			<div 	onclick="changeColor('OPENING', 'OPEN','CLOSING', 'CLOSE', '#FF8C00', false);"
+					style="	height:25px; 
+							width:100px; 
+							float:left;">
+
+				<img src="images/transitions/trOpenSEC.png">		
+
+			</div>	
+					
+					
+			<div 	class="states" 
+					id="OPENING"
+					style="	height:50px; 
+							width:100px; 
+							float:left;">
+
+				<img src="images/states/stOpening.png">
+
+			</div>
+					
+					
+			<div 	onclick="changeColor('CLOSING', 'CLOSE','OPENING', 'OPEN', '#FF8C00', false);"
+					style="	height:25px;
+							width:100px; 
+							position: absolute;
+							left: 33.4%;
+							top: 50%;">
+
+				<img src="images/transitions/trCloseSEC.png">
+
+			</div>
+						
+
+			<!--4. ROW-->
+			<div 	onclick="changeColor('CLOSED', 'CLOSING_FIN','CLOSING', 'CLOSE', '#FF8C00', false);"
+					style="	height:50px; 
+							width:150px; 
+							float:left">
+
+				<img src="images/transitions/trClosingFIN.png">	
+
+			</div>
+						
+						
+			<div 	onclick="changeColor('OPENING', 'OPEN','CLOSED', 'CLOSING_FIN', '#FF8C00', false);"
+					style="	height:50px; 
+							width:150px; 
+							float:left">
+
+				<img src="images/transitions/trOpen.png">	
+
+			</div>
+			
+
+			<!--5. ROW-->
+			<div 	class="states"
+					id="CLOSED"
+					style="	height:50px; 
+							width:100px; 
+							position: absolute;
+							left: 33.4%;
+							top: 80%;">
+
+				<img src="images/states/stClosed.png">
+
+			</div>
+
+
+		</section>
+	
+
+
+		<section style="margin-top:25px;">
+			
+			<h3>Interface</h3>
+		
+			<p>Transition Name: <span id="interface">XXX</span></p>
+
+		</section>
+
+
+		<br>
+		<hr width="45%;">	
+	
+	
+		<section>
+		
+			<br>
+			<br>
+			For more explanation please visit - 
+			<a href="https://github.com/Incrementis/Javascript-mutable-data-and-prototypes-/wiki"> 
+			Mutable data and prototypes Wiki</a>
+			
+		</section>
+		
+
+	</body>
+
+	
+	
+	<footer>
+	
+		<script language="javascript" type="text/javascript" src="mutable.js"></script>
+	
+	</footer>
+	 
+
+</html>
